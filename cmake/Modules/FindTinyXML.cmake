@@ -41,11 +41,15 @@
 # 
 ##################################################################################################
 
+message("Using FindTinyXML to locate TinyXML Package")
+message("Current TinyXML_ROOT_DIR before checking env: ${TinyXML_ROOT_DIR}")
 # Get package location hint from environment variable (if any)
 if(NOT TinyXML_ROOT_DIR AND DEFINED ENV{TinyXML_ROOT_DIR})
   set(TinyXML_ROOT_DIR "$ENV{TinyXML_ROOT_DIR}" CACHE PATH
       "TinyXML base directory location (optional, used for nonstandard installation paths)")
 endif()
+
+message("Current TinyXML_ROOT_DIR after checking env: ${TinyXML_ROOT_DIR}")
 
 # Search path for nonstandard package locations
 if(TinyXML_ROOT_DIR)
